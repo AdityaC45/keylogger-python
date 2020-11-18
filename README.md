@@ -1,6 +1,6 @@
 # keylogger-python
 
-# To run it in your machine for testing
+## To run it in your machine for testing
 * run the command
 *  ### pip install -r requirements.txt
 * to download the dependencies required for the project
